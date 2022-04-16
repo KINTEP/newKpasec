@@ -1,0 +1,108 @@
+{% extends "bootstrap.html" %}
+{% block content %}
+<style type="text/css">
+	.row1{
+		background: black;
+	}
+	#row0{
+		margin-left: 10%;
+		margin-right: 10%;
+		height: 300px;
+		width: 55%;
+		margin-top: 10%;
+		border-radius: 2%;
+		border: 2px solid black;
+	}
+
+	body{
+		background: greenyellow;
+	}
+
+	.btn{
+		height: 80%;
+		width: 80%;
+		margin-top: 10%;
+		margin-down: 10%;
+		margin-right:10%;
+		margin-left: 10%;
+		padding: 0%;
+	}
+</style>
+
+<body>
+<div class="">
+	<center>
+
+	<div class="jumbotron row container-fluid bg-white" id="row0">
+		<div class="progress">
+  		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+		</div>
+		<div class="row navbar-toggler" id="row1">
+			<div class="col"><button class="btn btn-dark btn-lg-md-sm-xl text-wrap badge">Button1</button></div>
+			<div class="col"><button class="btn btn-success btn-lg-md-sm-xl text-wrap badge">Button1</button></div>
+			<div class="col"><button class="btn btn-danger btn-lg-md-sm-xl text-wrap badge" >Button1</button></div>
+		</div>
+		<div class="row navbar-toggler" id="row1">
+			<div class="col"><button class="btn btn-warning btn-lg-md-sm-xl text-wrap badge">Button1</button></div>
+			<div class="col"><button class="btn btn-info btn-lg-md-sm-xl text-wrap badge">Button1</button></div>
+			<div class="col"><button class="btn btn-secondary btn-lg-sm-lg-xl text-wrap badge">Button1</button></div>
+		</div>
+	</div>
+
+	<form method="POST" onsubmit="return submitForm(this);" autocomplete="off" id="formId">
+		{{form.name1}}
+		<br>
+		{{form.submit1}}
+	</form>
+	</center>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$('#name1').val('');
+</script>
+<script type="text/javascript">
+	/*function(){
+    $.ajax({url: "/tests", success: function(result){
+    	res1 = result['data']
+
+    	data: form.serialize(),
+    	success: function(data),
+
+    	
+    }})
+  }
+*/
+	function submitForm(form) {
+		var form = $("#formId");
+        var url = form.attr('action');
+
+		swal({
+			title: "Are you here",
+			text: "Hello Sir!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((isOkay) => {
+			if (isOkay) {
+				form.submit()
+				
+				/*
+    				$.ajax({
+    					url: url, 
+    					type: 'POST',
+    					data: form.serialize(),
+    					success: function(data){
+    						alert("Data sent!")
+    					}
+    	
+    				})
+  				*/
+				//form.reset()
+			}
+		})
+		return false
+	}
+</script>
+
+</body>
+{% endblock %}

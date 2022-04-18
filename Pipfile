@@ -18,6 +18,7 @@ flask-limiter = "*"
 flask-wtf = {extras = ["email"], version = "*"}
 requests = "*"
 firebase-admin = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

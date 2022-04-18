@@ -4,6 +4,20 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
+numpy = "*"
+pandas = "*"
+gunicorn = "*"
+flask-admin = "*"
+flask-bcrypt = "*"
+flask-login = "*"
+flask-sqlalchemy = "*"
+cryptography = "*"
+wtforms-sqlalchemy = "*"
+flask-limiter = "*"
+flask-wtf = {extras = ["email"], version = "*"}
+requests = "*"
+firebase-admin = "*"
 
 [dev-packages]
 
